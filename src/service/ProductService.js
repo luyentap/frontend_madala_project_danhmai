@@ -1,6 +1,6 @@
-import Request, {apiURL} from "../common/Axios";
-import * as axios from 'axios';
+import Request from "../common/Axios";
 
+const apiURL = 'http://localhost/php-rest-api/product/';
 class ProductService {
   static createProduct(data) {
     return Request.post("products", data);
@@ -11,11 +11,11 @@ class ProductService {
   }
 
   static getBestProducts() {
-    return Request.get(`${apiURL}/products`);
+    return Request.get(`${apiURL}/read.php/`);
   }
 
   static getNewProducts() {
-    return Request.get(`${apiURL}/products_new`);
+    return Request.get(`${apiURL}/read.php/`);
   }
 
   static getLimitProducts(page,limit) {
@@ -23,7 +23,7 @@ class ProductService {
   }
 
   static getHotProducts() {
-    return Request.get(`${apiURL}/products_hot`);
+    return Request.get(`${apiURL}/read.php/`);
   }
 
   static updateProduct(id, data) {
